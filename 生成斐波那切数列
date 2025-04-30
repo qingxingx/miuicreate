@@ -1,0 +1,18 @@
+def generate_fibonacci(n):
+    """生成前n个斐波那契数"""
+    fib = [0, 1]
+    while len(fib) < n:
+        fib.append(fib[-1] + fib[-2])
+    return fib[:n]  # 处理n=1的特殊情况
+
+def is_fibonacci(num):
+    """验证数字是否属于斐波那契数"""
+    a, b = 0, 1
+    while b < num:
+        a, b = b, a + b
+    return b == num
+
+# 使用示例
+print("前10个斐波那契数:", generate_fibonacci(10))
+print(f"数字 233 是斐波那契数吗？{'是' if is_fibonacci(233) else '否'}")
+print(f"数字 100 是斐波那契数吗？{'是' if is_fibonacci(100) else '否'}")
